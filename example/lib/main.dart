@@ -54,7 +54,7 @@ void backgroundHandler() {
               maxProgress: 100,
               channelShowBadge: false,
             ),
-            iOS: const IOSNotificationDetails(),
+            iOS: const DarwinNotificationDetails(),
           ),
         );
       });
@@ -96,7 +96,7 @@ void backgroundHandler() {
                 ? Importance.high
                 : Importance.min,
           ),
-          iOS: const IOSNotificationDetails(
+          iOS: const DarwinNotificationDetails(
             presentAlert: true,
           ),
         ),
@@ -131,18 +131,15 @@ class _AppState extends State<App> {
     var flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
     var initializationSettingsAndroid =
         const AndroidInitializationSettings('ic_upload');
-    var initializationSettingsIOS = IOSInitializationSettings(
+    var initializationSettingsIOS = DarwinInitializationSettings(
       requestSoundPermission: false,
       requestBadgePermission: false,
       requestAlertPermission: true,
-      onDidReceiveLocalNotification:
-          (int id, String? title, String? body, String? payload) async {},
     );
     var initializationSettings = InitializationSettings(
         android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
     flutterLocalNotificationsPlugin.initialize(
       initializationSettings,
-      onSelectNotification: (payload) async {},
     );
 
     SharedPreferences.getInstance()

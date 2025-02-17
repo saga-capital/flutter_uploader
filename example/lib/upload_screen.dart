@@ -66,7 +66,7 @@ class _UploadScreenState extends State<UploadScreen> {
               children: <Widget>[
                 Text(
                   'Configure test Server Behavior',
-                  style: Theme.of(context).textTheme.subtitle1,
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
                 DropdownButton<ServerBehavior>(
                   items: ServerBehavior.all.map((e) {
@@ -85,7 +85,7 @@ class _UploadScreenState extends State<UploadScreen> {
                 const Divider(),
                 Text(
                   'multipart/form-data uploads',
-                  style: Theme.of(context).textTheme.subtitle1,
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
                 Wrap(
                   alignment: WrapAlignment.center,
@@ -108,7 +108,7 @@ class _UploadScreenState extends State<UploadScreen> {
                 const Divider(height: 40),
                 Text(
                   'binary uploads',
-                  style: Theme.of(context).textTheme.subtitle1,
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
                 const Text('this will upload selected files as binary'),
                 Wrap(

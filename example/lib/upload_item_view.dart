@@ -29,7 +29,7 @@ class UploadItemView extends StatelessWidget {
                 item.id,
                 style: Theme.of(context)
                     .textTheme
-                    .caption!
+                    .bodySmall!
                     .copyWith(fontFamily: 'monospace'),
               ),
               Container(
@@ -59,7 +59,7 @@ class UploadItemView extends StatelessWidget {
                     item.response!.response!,
                     style: Theme.of(context)
                         .textTheme
-                        .caption!
+                        .bodySmall!
                         .copyWith(fontFamily: 'monospace'),
                   ),
               ]
